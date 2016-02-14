@@ -1,0 +1,380 @@
+.smart-section
+  z-index: 1
+  position: relative
+  .close
+    width: 150px
+    height: 150px
+    top: 1em
+    right: 1em
+    cursor: pointer
+    position: absolute
+    display: block
+    z-index: 200
+    text-indent: -9999px
+    &:before
+      content: ''
+      width: 55%
+      height: 2px
+      background: #ffffff
+      position: absolute
+      top: 48%
+      left: 22%
+      transform: rotate(-45deg)
+      transition: all 0.3s ease-out
+    &:after
+      content: ''
+      width: 55%
+      height: 2px
+      background: #ffffff
+      position: absolute
+      top: 48%
+      left: 22%
+      transform: rotate(-45deg)
+      transition: all 0.3s ease-out
+      transform: rotate(45deg)
+      transition: all 0.3s ease-out
+    &:hover, &.hold
+      &:before, &:after
+        transform: rotate(180deg)
+
+  .switch-wrap
+    position: absolute
+    bottom: 100px
+    right: 100px
+
+  .mouse-button-devices
+    top: 25%
+    left: 50%
+    display: block
+    transform: translateX(-50%)
+    -webkit-transform: translateX(-50%)
+    -moz-transform: translateX(-50%)
+    width: 20px
+    cursor: pointer
+    position: absolute
+    z-index: 3
+    +transition(.6s)
+    span
+      display: block
+      width: 5px + 1
+      height: 5px + 1
+      -ms-transform: rotate(45deg)
+      -webkit-transform: rotate(45deg)
+      transform: rotate(45deg)
+      border-right: 2px solid white
+      border-bottom: 2px solid white
+      margin: 0 0 3px 8px
+    &:before
+      content: ''
+      position: absolute
+      display: block
+      width: 100px
+      height: 100px
+      top: -30px
+      left: -38px
+      border-radius: 50%
+      -webkit-animation: spin 3s infinite
+      transition: .2s all ease-out
+      border-radius: 50%
+      box-shadow: 0 0 1px 1px #fff
+      z-index: -2
+    &:after
+      content: ''
+      position: absolute
+      display: block
+      z-index: -1
+      height: 150px
+      width: 150px
+      top: -54px
+      left: -63px
+      border-radius: 50%
+      +grd-v(#7fe9eb,#daa147)
+      opacity: .6
+      transform: scale(0.5)
+      +transition(.5s)
+    &:hover
+      &:after
+        transform: scale(.6)
+        opacity: .8
+    &.active
+      &:after
+        transform: scale(.9)
+        opacity: .8
+      &:before
+        box-shadow: 0 0 100px 50px #daa147
+    .mouse
+      height: 38px
+      width: 21px
+      border-radius: 20px
+      transform: none
+      border: 2px solid white
+      top: 170px
+
+    .wheel
+      height: 5px
+      width: 2px
+      display: block
+      margin: 5px auto
+      background: white
+      position: relative
+
+
+.smart-images
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  div
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    +transition(1s)
+    background:
+      size: cover
+      position: center
+  .empty
+    background-image: url(../img/smart-empty.jpg)
+  .blurry
+    opacity: 0
+    background-image: url(../img/smart-blur.jpg)
+  .night
+    opacity: 0
+    background-image: url(../img/smart-night.jpg)
+  &.blurred
+    .blurry
+      opacity: 1
+  &.nighted
+    .night
+      opacity: 1
+  .items
+    > div, .light
+      opacity: 0
+    .light
+      +transition(.5s)
+      &.active
+        opacity: 1
+  .nest
+    .default
+      background-image: url(../img/nest-bg.png)
+    .light
+      background-image: url(../img/nest-light-bg.png)
+  .tv
+    .default
+      background-image: url(../img/tv-bg.png)
+    .light
+      background-image: url(../img/tv-light-bg.png)
+  .sonos
+    .default
+      background-image: url(../img/sonos-bg.png)
+    .light
+      background-image: url(../img/sonos-bg-light.png)
+  .apple-tv
+    .default
+      background-image: url(../img/apple-tv.png)
+    .light
+      background-image: url(../img/apple-tv-light.png)
+
+.devices-list
+  position: absolute
+  top: 30px
+  max-width: 900px
+  width: 100%
+  opacity: 0
+  left: 50%
+  transform: translateX(-50%)
+  -webkit-transform: translateX(-50%)
+  -moz-transform: translateX(-50%)
+  -ms-transform: translateX(-50%)
+  text-align: center
+  +transition(.5s)
+  &.folded
+    top: -300px
+  h2
+    +f($sfn,2.5em,400,#fff)
+    margin-top: 0
+    margin-bottom: 30px
+    text-transform: uppercase
+    display: inline-block
+    position: relative
+    &:before
+      content: ''
+      display: block
+      position: absolute
+      width: 100%
+      height: 1px
+      background: #fff
+      bottom: -5px
+  ul
+    display: block
+    margin: 0
+    padding: 0
+  li
+    list-style: none
+    display: inline-block
+    margin: 0 1em
+  a
+    +f($mfn,1em,300,#fff)
+    text-decoration: none
+    display: inline-block
+    letter-spacing: .1em
+    text-transform: uppercase
+    position: relative
+    +transition(.3s)
+    &:hover
+      text-shadow: 0 0 15px #fff
+      &:before
+        width: 100%
+    &:before
+      content: ''
+      display: block
+      position: absolute
+      +transition(.5s)
+      left: 0
+      width: 0
+      bottom: -2px
+      height: 1px
+      background: #fff
+      box-shadow: 0 0 20px 2px #fff
+
+.devices-content
+  display: none
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  width: 100%
+  height: 100%
+  &.active
+    display: block
+  .item
+    display: none
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translateX(-50%) translateY(-50%)
+    -webkit-transform: translateX(-50%) translateY(-50%)
+    -moz-transform: translateX(-50%) translateY(-50%)
+    -ms-transform: translateX(-50%) translateY(-50%)
+    width: 90%
+    height: 90%
+    &.active
+      display: block
+  .left, .right
+    opacity: 0
+    padding-top: 10%
+    width: 48%
+  .pic
+    position: relative
+    &:before
+      +transition(1s)
+      content: ''
+      display: block
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translateX(-50%) translateY(-50%)
+      -webkit-transform: translateX(-50%) translateY(-50%)
+      -moz-transform: translateX(-50%) translateY(-50%)
+      -ms-transform: translateX(-50%) translateY(-50%)
+      width: 50%
+      height: 50%
+      border-radius: 50%
+
+  img
+    position: relative
+    width: 100%
+  h3
+    +f($mfn,2em,300,#fff)
+    margin-top: 0
+  .description
+    padding: 1em 0
+    background: rgba(255,255,255,.4)
+  li, p
+    +f($mfn,1em,300,#fff)
+  .btn-cont
+    text-align: left
+  .btn:hover
+    background: lighten(blue,15%)
+    box-shadow: 0 0 150px 30px lighten(blue,15%)
+
+.btn-orange:hover
+  box-shadow: 0 0 150px 30px orange !important
+  background: orange !important
+
+
+// circles
+
+// .circle
+//   position: absolute
+//   width: 0
+//   height: 0
+//   border: 2px solid #fff
+//   border-radius: 50%
+//   cursor: pointer
+//   &:before
+//     content: '\f05a'
+//     +transition(.2s)
+//     opacity: 0
+//     font-family: FontAwesome
+//     color: #fff
+//     position: absolute
+//     font-size: 3em
+//     left: 50%
+//     top: 50%
+//     transform: translateX(-50%) translateY(-50%)
+//   &.active
+//     &:before
+//       content: '\f00d'
+//       opacity: 1
+//     .info
+//       opacity: 1
+//       transform: translateX(-110%)
+//   &:hover
+//     &:before
+//       opacity: 1
+//   &.circle-1
+//     top: 38%
+//     right: 34.5%
+//   &.circle-2
+//     top: 38.9% + 3
+//     left: 40.8% + 3
+//   &.circle-3
+//     top: 55% + 2
+//     left: 45% + 5
+//   &.circle-4
+//     top: 62% + 2
+//     left: 52.5% + 2
+//   .info
+//     position: absolute
+//     left: 0
+//     width: 200px
+//     opacity: 0
+//     +transition(.5s)
+//     +f($mfn,1.2em,300,#fff)
+//     text-align: right
+//     transform: translateX(-60%)
+
+// .stroke
+//   position: absolute
+//   width: 2px
+//   height: 0
+//   left: 0
+//   transform-origin: top left
+//   border-width: 0 0 0 2px
+//   border-style: solid
+//   border-color: #fff
+//   &.stroke-1
+//     top: 72px
+//     transform: rotate(98deg)
+//   &.stroke-2
+//     top: 122px
+//     transform: rotate(58deg)
+//   &.stroke-3
+//     top: 167px
+//     left: 25px
+//     transform: rotate(30deg)
+

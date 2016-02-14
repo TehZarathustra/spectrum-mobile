@@ -1,0 +1,251 @@
+.section-header-video
+  background: #424242
+  > .mbYTP_wrapper
+    position: relative
+    &:before
+      content: ''
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      z-index: 1
+      bottom: 0
+      +grd-v(transparent,#000)
+  .background-overlay
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    background-image: url(../img/v_bg.png)
+    background-color: #000
+    opacity: .15
+  .heading
+    position: absolute
+    width: 100%
+    top: 0
+    text-align: center
+  .heading-row
+    display: inline-block
+    position: relative
+  .heading-bg
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    //background: rgba(0,0,0,.5)
+  h1
+    margin: 0
+    position: relative
+    +f($sfn,5em,400,#fff)
+    display: inline-block
+    text-align: center
+    text-transform: uppercase
+    text-shadow: 0 0 10px rgba(0,0,0,.5)
+
+.circle
+  stroke: #f8aa28
+  stroke-dasharray: 650
+  stroke-dashoffset: 650
+  -webkit-transition: all 0.5s ease-in-out
+  opacity: 0.3
+
+.playBut
+  position: absolute
+  left: 50%
+  top: 50%
+  transform: translateX(-50%) translateY(-50%)
+  -webkit-transform: translateX(-50%) translateY(-50%)
+  -moz-transform: translateX(-50%) translateY(-50%)
+  display: inline-block
+  -webkit-transition: all 1s ease
+  .triangle
+    -webkit-transition: all 0.7s ease-in-out
+    stroke-dasharray: 240
+    stroke-dashoffset: 480
+    stroke: #fff
+    transform: translateY(0)
+  &:hover
+    .triangle
+      stroke-dashoffset: 0
+      opacity: 1
+      stroke: #f8aa28
+      animation: nudge 0.7s ease-in-out
+    .circle
+      stroke-dashoffset: 0
+      opacity: 1
+  &.active
+    bottom: 0
+    right: 0
+    top: auto
+    left: auto
+    transform: translateX(0) translateY(0) scale(0.5) rotate(-90deg)
+    -webkit-transform: translateX(0) translateY(0) scale(0.5) rotate(-90deg)
+    -moz-transform: translateX(0) translateY(0) scale(0.5) rotate(-90deg)
+
+@keyframes nudge
+  0%
+    transform: translateX(0)
+
+  30%
+    transform: translateX(-5px)
+
+  50%
+    transform: translateX(5px)
+
+  70%
+    transform: translateX(-2px)
+
+  100%
+    transform: translateX(0)
+
+.scroll-down
+  top: 85%
+  left: 50%
+  display: block
+  transform: translateX(-50%)
+  -webkit-transform: translateX(-50%)
+  -moz-transform: translateX(-50%)
+  width: 20px
+  position: absolute
+  z-index: 3
+  +transition(.6s)
+  span
+    display: block
+    width: 5px + 1
+    height: 5px + 1
+    -ms-transform: rotate(45deg)
+    -webkit-transform: rotate(45deg)
+    transform: rotate(45deg)
+    border-right: 2px solid white
+    border-bottom: 2px solid white
+    margin: 0 0 3px 8px
+
+  .unu-top
+    position: relative
+    left: 2px
+    bottom: 3px
+    display: none
+    +rotate(-180)
+
+  .unu
+    margin-top: 6px
+    -webkit-animation: mouse-scroll 1s infinite
+    -moz-animation: mouse-scroll 1s infinite
+
+  .doi, .trei
+    -webkit-animation: mouse-scroll 1s infinite
+    -moz-animation: mouse-scroll 1s infinite
+
+  .unu
+    -webkit-animation-delay: .1s
+    -moz-animation-delay: .1s
+    -webkit-animation-direction: alternate
+
+  .doi
+    -webkit-animation-delay: .2s
+    -moz-animation-delay: .2s
+    -webkit-animation-direction: alternate
+
+  .trei
+    -webkit-animation-delay: .3s
+    -moz-animation-delay: .3s
+    -webkit-animation-direction: alternate
+
+  .mouse
+    height: 38px
+    width: 21px
+    border-radius: 20px
+    transform: none
+    border: 2px solid white
+    top: 170px
+
+  .wheel
+    height: 5px
+    width: 2px
+    display: block
+    margin: 5px auto
+    background: white
+    position: relative
+    -webkit-animation: mouse-wheel 1.2s ease infinite
+    -moz-animation: mouse-wheel 1.2s ease infinite
+  &.contact-us
+    top: 88%
+    .mouse
+      display: none
+    &:before
+      content: 'Contact us'
+      text-transform: uppercase
+      white-space: nowrap
+      +f($mfn,1em,300,#fff)
+      margin-left: -35px
+
+@-webkit-keyframes mouse-wheel
+  0%
+    opacity: 1
+    -webkit-transform: translateY(0)
+    -ms-transform: translateY(0)
+    transform: translateY(0)
+
+  100%
+    opacity: 0
+    -webkit-transform: translateY(6px)
+    -ms-transform: translateY(6px)
+    transform: translateY(6px)
+
+
+@-moz-keyframes mouse-wheel
+  0%
+    top: 1px
+
+  50%
+    top: 2px
+
+  100%
+    top: 3px
+
+
+@-webkit-keyframes mouse-scroll
+  0%
+    opacity: 0
+
+  50%
+    opacity: .5
+
+  100%
+    opacity: 1
+
+
+@-moz-keyframes mouse-scroll
+  0%
+    opacity: 0
+
+  50%
+    opacity: .5
+
+  100%
+    opacity: 1
+
+
+@-o-keyframes mouse-scroll
+  0%
+    opacity: 0
+
+  50%
+    opacity: .5
+
+  100%
+    opacity: 1
+
+
+@keyframes mouse-scroll
+  0%
+    opacity: 0
+
+  50%
+    opacity: .5
+
+  100%
+    opacity: 1

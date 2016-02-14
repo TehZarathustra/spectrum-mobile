@@ -1,0 +1,217 @@
+.bedroom-section
+  position: relative
+
+  .elements
+    // height: 6000px
+    > div
+      z-index: 2
+  .models
+    position: absolute
+    top: 30%
+    right: 10%
+    width: 340px
+    .btn:hover
+      border: none
+      background: rgba(255,255,255,.4)
+      box-shadow: 0 0 350px 30px #fff
+
+.models-panel
+  background: red
+  position: absolute
+  right: 0
+  width: 20%
+  height: 100%
+
+.bedroom-images
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  > div
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    background:
+      size: cover
+      // attachment: fixed
+      position: center
+  .default
+    background-image: url(../img/b-2-2.jpg)
+  .fade-in
+    opacity: 0
+    +transition(1s)
+    background-image: url(../img/b-2-1.jpg)
+    &.active
+      opacity: 1
+  .fade-in-second
+    opacity: 0
+    z-index: 1
+    background-image: url(../img/b-2-3.jpg)
+
+.bedroom-models
+  position: relative
+  background:
+    image: url(../img/b-2-2.jpg)
+    size: cover
+
+  .items
+    max-width: 1400px
+    margin: 0 auto
+
+  .item
+    width: 49%
+    float: left
+
+  .item-inner
+    padding: 5%
+
+  .left
+    width: 20%
+  .right
+    width: 70%
+
+  h2
+    +f($mfn,4.5em,300,#fff)
+    text-align: center
+
+  h3
+    margin-top: 0
+    +f($mfn,1.5em,300,#fff)
+  p
+    +f($mfn,.9em,300,#fff)
+
+.back-btn-left
+  left: 15px
+  width: 0
+  border-width: 38.5px 34px 38.5px 0
+  border-color: transparent #fff transparent transparent
+  position: absolute
+  z-index: 4
+  top: 50%
+  cursor: pointer
+  width: 0
+  height: 0
+  border-style: solid
+  margin-top: -38px
+  -webkit-transform: translate3d(0,0,0)
+  -ms-transform: translate3d(0,0,0)
+  transform: translate3d(0,0,0)
+
+.back-btn-right
+  right: 15px
+  width: 0
+  border-width: 38.5px 34px 38.5px 0
+  border-color: transparent #fff transparent transparent
+  position: absolute
+  z-index: 4
+  top: 50%
+  cursor: pointer
+  width: 0
+  height: 0
+  border-style: solid
+  margin-top: -38px
+  -webkit-transform: translate3d(0,0,0)
+  -ms-transform: translate3d(0,0,0)
+  transform: translate3d(0,0,0)
+  +rotate(180)
+
+.bedroom-switch-wrap
+  top: 25%
+  left: 10%
+  position: absolute
+
+.bedroom-switch
+  transform: scale(0.8)
+  -webkit-transform: scale(0.8)
+  width: 200px
+  height: 317px
+  position: relative
+  background: url(../img/b-switch.jpg)
+  &.lutron-black
+    background: url(../img/lutron-switch_black.jpg)
+  &.lutron-gold
+    background: url(../img/lutron-switch_gold.jpg)
+  &.lutron-white
+    background: url(../img/lutron-switch_white.jpg)
+  &.active
+    .switch-bar
+      height: 100%
+  .switch-bar-wrap
+    position: absolute
+    height: 158px
+    bottom: 94px
+    left: 96px
+  .switch-bar
+    position: absolute
+    width: 6px
+    height: 0
+    bottom: 0
+    +transition(1s)
+    background: white
+    box-shadow: 0 0 50px 15px #fff
+  &:after
+    content: 'GRAFIK T Dimmer & Switch'
+    position: absolute
+    bottom: -50px
+    +f($mfn,1.5em,300,#fff)
+    width: 200%
+    text-shadow: 0 0 10px rgba(0,0,0,1)
+    text-align: center
+    margin-left: -50%
+  &:before
+    width: 100%
+    // content: 'LUTRON'
+    position: absolute
+    top: -50px
+    +f($mfn,1.5em,300,#fff)
+    text-align: center
+
+.switch-colors
+  text-align: center
+  margin-top: 65px
+  margin-left: -25px
+  > div
+    display: inline-block
+    width: 70px
+    height: 111px
+    opacity: 0
+    cursor: pointer
+    margin: 0 5px
+    background-size: 100%
+    box-shadow: 0 0 30px 5px rgba(0,0,0,0.3)
+    &.black
+      background-image: url(../img/lutron-switch_black.jpg)
+    &.gold
+      background-image: url(../img/lutron-switch_gold.jpg)
+    &.white
+      background-image: url(../img/lutron-switch_white.jpg)
+
+.bedroom-sentences
+  width: 400px
+  top: 400px
+  left: 50%
+  margin-left: -200px
+  position: absolute
+  > p
+    opacity: 0
+    top: 50px
+    text-align: center
+    +transition(.3s)
+    position: absolute
+    +f($mfn,1.2em,300,#fff)
+    &.active
+      top: 0
+      opacity: 1
+
+.lutron
+  position: absolute
+  top: 5em
+  // opacity: 0
+  width: 100%
+  text-align: center
+  img
+    margin: 10px auto
+    max-width: 300px

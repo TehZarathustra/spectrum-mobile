@@ -1,0 +1,95 @@
+.content-tabs
+  display: none
+  max-width: 800px
+  margin: -50px auto 0 auto
+  overflow: hidden
+  position: relative
+  +transition(.5s)
+
+.call-to-actions
+  display: none
+  border-top: 1px solid #fff
+  a
+    display: block
+    text-align: center
+    text-decoration: none
+    +f($mfn,1em,300,#fff)
+    background: rgba(0,0,0,.3)
+    padding: .5em
+    width: 50%
+    float: left
+    +transition(.2s)
+    &:hover
+      background: rgba(0,0,0,.6)
+
+
+.tab-nav
+  position: relative
+  +transition(1s)
+  text-align: center
+  height: 2px
+  overflow: hidden
+  &:before
+    display: block
+    content: ''
+    position: absolute
+    width: 100%
+    bottom: 0
+    border-bottom: solid 2px #fff
+    transform: scaleX(0.0001)
+    box-shadow: 0 0 20px 2px violet
+    // +transition(2s)
+    transition: cubic-bezier(1,1,.32,1), 2s transform cubic-bezier(1,1,.32,1)
+  &.active
+    height: 55px
+    background: rgba(0,0,0,.4)
+    &:before
+      transform: scaleX(1)
+  a
+    opacity: 0
+    padding: 1em 0
+    display: block
+    float: left
+    width: 33.3%
+    +f($mfn,1em,300,#fff)
+    text-decoration: none
+    +transition(.3s)
+    &.active
+      background: #fff
+      color: #000
+
+.text-tab
+  padding: 1em
+
+.tab-content
+  opacity: 0
+  display: none
+  +transition(.5s)
+  background: rgba(0,0,0,.4)
+  .content-tab
+    display: none
+    +f($mfn,1em,300,#fff)
+    &.active
+      display: block
+  iframe
+    width: 100%
+
+.hide-tabs
+  text-align: center
+  +transition(.2s)
+  cursor: pointer
+  a
+    text-decoration: none
+    font-size: 1em
+    color: #fff
+    &:hover
+      background: transparent
+  &:hover
+    background: rgba(255,0,0,.5)
+
+.tab-anim-select
+  position: absolute
+  right: 0
+  top: 2em
+  padding: 1em
+  background: rgba(255,255,255,.5)

@@ -1,0 +1,210 @@
+.service-page
+  .description-section
+    height: 60%
+    overflow: hidden
+    .left
+      background: lightgray
+      width: 50%
+      height: 100%
+    .right
+      width: 50%
+      height: 100%
+      overflow: hidden
+  .description-inner
+    padding: 1em
+  .image
+    position: relative
+    img
+      position: absolute
+      width: 100%
+      bottom: 0
+  .portfolio-section
+    height: 40%
+    overflow: hidden
+    background: #000
+    .left
+      width: 30%
+      height: 100%
+      background: #000
+      h2
+        display: inline-block
+        margin-left: 5%
+        margin-top: 20vh
+        +f($mfn,2em,400,#fff)
+    .right
+      width: 70%
+  p
+    +f($mfn,1em)
+  .row
+    text-align: center
+
+
+// custom slides
+
+.service-custom-electrical
+  position: relative
+  .event-gal-wrap
+    position: absolute
+    top: 17%
+    +transition(.3s)
+    &.active
+      &:before
+        content: ''
+        +transition(.3s)
+        cursor: pointer
+        position: fixed
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        background: rgba(0,0,0,.5)
+  .btn-cont
+    bottom: 45%
+    position: absolute
+  .service-text
+    position: absolute
+    z-index: 1
+    width: 100%
+    top: 4em
+    h1
+      text-align: center
+      text-shadow: 0 0 10px rgba(0,0,0,.5)
+      +f($mfn,5em,300,#fff)
+      text-transform: uppercase
+  .images
+    //position: relative
+    position: absolute
+    top: 0
+    bottom: 0
+    right: 0
+    left: 0
+    > .default, .fade-in
+      // +transition(1s)
+      overflow: hidden
+      position: absolute
+      top: 0
+      bottom: 0
+      right: 0
+      left: 0
+      background-position: center
+      background-size: cover
+      > img
+        display: none
+    &.slide-left
+      .default, .fade-in
+        background-position: center
+    &.tran
+      .default, .fade-in
+        +transition(1s)
+  .fade-in
+    opacity: 0
+    &.active
+      opacity: 1
+
+  .fade-in-text
+    padding: 10px 30px 20px 10px
+    background: rgba(0,0,0,.3)
+    position: absolute
+    top: 35%
+    +f($mfn,1em,300,#fff)
+    box-shadow: 0 0 35px 3px #fff
+
+  .fade-titles
+    position: absolute
+    top: 13%
+    text-align: center
+    text-shadow: 0 0 10px rgba(0,0,0,.5)
+    +f($mfn,2.5em,400,#fff)
+    text-transform: uppercase
+    &.title-green
+      color: #9AEBFB
+      // text-shadow: 0 0 20px rgba(255,255,255,.5)
+
+  .switch-wrap
+    position: absolute
+    bottom: 100px
+    right: 100px
+
+  .mouse-button
+    top: 25%
+    left: 50%
+    display: block
+    transform: translateX(-50%)
+    -webkit-transform: translateX(-50%)
+    -moz-transform: translateX(-50%)
+    width: 20px
+    cursor: pointer
+    position: absolute
+    z-index: 3
+    +transition(.6s)
+    span
+      display: block
+      width: 5px + 1
+      height: 5px + 1
+      -ms-transform: rotate(45deg)
+      -webkit-transform: rotate(45deg)
+      transform: rotate(45deg)
+      border-right: 2px solid white
+      border-bottom: 2px solid white
+      margin: 0 0 3px 8px
+    &:before
+      content: ''
+      position: absolute
+      display: block
+      width: 100px
+      height: 100px
+      top: -30px
+      left: -38px
+      border-radius: 50%
+      -webkit-animation: spin 3s infinite
+      transition: .2s all ease-out
+      border-radius: 50%
+      box-shadow: 0 0 1px 1px #fff
+      z-index: -2
+    &:after
+      content: ''
+      position: absolute
+      display: block
+      z-index: -1
+      height: 150px
+      width: 150px
+      top: -54px
+      left: -63px
+      border-radius: 50%
+      +grd-v(#ff4c34,#8126f5)
+      opacity: .6
+      transform: scale(0.5)
+      +transition(.5s)
+    &:hover
+      &:after
+        transform: scale(.6)
+        opacity: .8
+    &.active
+      &:after
+        transform: scale(.9)
+        opacity: .8
+      &:before
+        box-shadow: 0 0 100px 50px violet
+    .mouse
+      height: 38px
+      width: 21px
+      border-radius: 20px
+      transform: none
+      border: 2px solid white
+      top: 170px
+
+    .wheel
+      height: 5px
+      width: 2px
+      display: block
+      margin: 5px auto
+      background: white
+      position: relative
+
+@-webkit-keyframes spin
+  0%
+    transform: rotate(90deg)
+  50%
+    transform: scale(1.15)
+  100%
+    transform: scale(1) rotate(-90deg)

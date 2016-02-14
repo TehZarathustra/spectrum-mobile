@@ -1,0 +1,86 @@
+.get-started-section
+  background: #fff
+  h2
+    text-align: center
+    +f($mfn,3em,400,gray)
+
+.get-started-nav
+  padding-top: 2em
+  text-align: center
+  > a
+    display: block
+    text-decoration: none
+    width: 33.3%
+    float: left
+    &:hover, &.active
+      .text
+        color: orange
+  .text
+    +transition(.2s)
+    display: block
+    +f($mfn,1.4em,300,gray)
+    padding: 0 1.5em
+  .pic
+    display: block
+    width: 150px
+    height: 130px
+    margin: 0 auto
+    &:before
+      content: ''
+      margin: 0 auto
+      display: block
+      position: relative
+      background-image: url(../img/switches-sprite.png)
+    &.pic-switch:before
+      width: 75px
+      height: 75px
+      top: 5px
+      background-position: -6px -778px
+    &.pic-leds:before
+      width: 50px
+      height: 94px
+      background-position: -3px -676px
+    &.pic-home:before
+      width: 88px
+      height: 91px
+      background-position: -3px -585px
+
+.get-started-content
+  margin-top: 4em
+  +transition(.7s)
+  margin-bottom: 12em
+
+.gtab
+  display: none
+  padding: 0 1em
+  h3
+    text-align: center
+    +f($mfn,1.2em,400,gray)
+  p
+    +f($mfn,1em,300,gray)
+  .pic
+    text-align: center
+  .pic-s
+    width: 300px
+    height: 100px
+    margin: 0 auto
+    &:before
+      content: ''
+      display: block
+      margin: 0 auto
+      position: relative
+      background-image: url(../img/switches-sprite.png)
+    &.pic-regular:before
+      width: 191px
+      height: 94px
+      background-position: 0 -342px
+    &.pic-smart:before
+      width: 285px
+      height: 94px
+      background-position: 0 -120px
+  .left, .right
+    width: 50%
+    h3, p
+      padding: 0 1em
+
+

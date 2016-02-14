@@ -1,0 +1,73 @@
+.portfolio-items
+  margin: 0
+  padding: 0
+  width: 100%
+  height: 100%
+  position: relative
+  li
+    display: inline-block
+    height: 100%
+    width: 33.3%
+    border-right: 1px solid white
+    cursor: pointer
+    position: absolute
+    top: 0
+    +transition(.5s)
+    &:nth-child(2)
+      left: 33.3%
+      &:before
+        content: 'Home theater'
+    &:nth-child(3)
+      left: 66.6%
+      &:before
+        content: 'Interior'
+    &.active
+      width: 100%
+      z-index: 1
+      transition: .3s width .2s, left .2s
+      border-right: none
+      left: 0
+    &:before
+      content: "Exterior"
+      +f($mfn,1.5em,300,#fff)
+      display: block
+      width: 100%
+      text-transform: uppercase
+      height: 100%
+      background-color: rgba(255, 255, 255, 0.2)
+      text-align: center
+      padding-top: 70%
+      text-shadow: 0 0 10px #000
+      position: absolute
+      top: 1
+      left: 1
+      transition: 300ms opacity
+      opacity: 0
+    &:hover
+      box-shadow: 0 0 50px 10px violet
+      &:before
+        opacity: 1
+      &.active:hover:before
+        display: none
+
+  div
+    background-size: cover
+    width: 100%
+    height: 100%
+    transition: 1s width
+
+.p-preview
+  overflow: hidden
+
+span.close-portfolio
+  display: none
+  position: absolute
+  top: 20px
+  right: 15px
+  z-index: 3
+  color: white
+  background-color: rgba(0, 0, 0, 0.7)
+  padding: 7px 9px
+  margin: 4px 9px
+  cursor: pointer
+  font-size: 1.5em

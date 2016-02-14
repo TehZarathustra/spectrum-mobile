@@ -1,0 +1,22 @@
+{
+  "name": "Spectrum",
+  "version": "0.1.0",
+  "dependencies": {
+    "normalize-css": "normalize.css#~3.0.3",
+    "owl.carousel": "OwlCarousel2#~2.0.0-beta.3",
+    "font-awesome": "fontawesome#~4.4.0",
+    "components-font-awesome": "~4.4.0",
+    "fullpage.js": "~2.7.3",
+    "animate.css": "~3.4.0",
+    "jquery.mb.ytplayer": "jquery.mb.YTPlayer#~2.9.4",
+    "scrollmagic": "ScrollMagic#~2.0.5"
+  },
+  "overrides": {
+    "owl.carousel": {
+      "dependencies": []
+    },
+    "fullpage.js": {
+      "dependencies": []
+    }
+  }
+}

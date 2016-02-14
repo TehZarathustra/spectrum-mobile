@@ -1,0 +1,63 @@
+.news-letter-section
+  text-align: center
+  position: relative
+  background:
+    image: url(../img/pattern.png)
+    repeat: repeat
+
+.news-text
+  form
+    height: 200px
+    display: block
+  h2
+    +f($mfn,4em,300,#fff)
+    margin-bottom: 0
+  p
+    margin-top: 1em
+    margin-bottom: 2em
+    +f($mfn,1em,300,#fff)
+  input[type="text"], textarea
+    +f($mfn,1em,300,#fff)
+    padding: .5em
+    border: 1px solid #fff
+    background: none
+    &:focus
+      outline: 0
+      box-shadow: 0 0 20px violet
+  textarea
+    width: 360px
+    margin: 20px auto
+    height: 130px
+    display: block
+  button
+    margin-left: 1em
+    position: relative
+    top: 1px
+    padding: 6px 20px !important
+  .socials
+    margin-top: 2em
+
+.news-letter-bg
+  z-index: -1
+  position: absolute
+  bottom: 0
+  left: 0
+  right: 0
+  top: 0
+  > div
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    top: 0
+    opacity: .1
+    +transition(4s)
+    background-size: cover
+    &.active
+      opacity: 1
+  .bg-1
+    background-image: url(../img/n-bg1.png)
+  .bg-2
+    background-image: url(../img/n-bg2.png)
+  .bg-3
+    background-image: url(../img/n-bg3.png)

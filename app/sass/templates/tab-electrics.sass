@@ -1,0 +1,14 @@
+.tabs-electrics
+  position: relative
+  h3
+    +f($mfn,1.5em,300,#fff)
+    margin: 0
+    text-transform: uppercase
+  .tab-e
+    position: absolute
+    opacity: 0
+    top: 0
+    +transition(.5s)
+    &.active
+      z-index: 2
+      opacity: 1

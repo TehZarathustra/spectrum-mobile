@@ -1,0 +1,26 @@
+.personalize-section
+  background:
+    image: url(../img/wood.jpg)
+    size: cover
+  .left
+    width: 42%
+    text-align: center
+    margin-left: 6%
+    padding-top: 5%
+  .right
+    width: 42%
+  .left, .right
+    opacity: 0
+  h2
+    +f($mfn,3em,400,#fff)
+    position: relative
+    &:before
+      content: ''
+      display: block
+      position: absolute
+      bottom: -10px
+      width: 100%
+      background: #fff
+      height: 1px
+  p
+    +f($mfn,1.2em,300,#fff)

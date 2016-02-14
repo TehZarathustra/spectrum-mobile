@@ -1,0 +1,110 @@
+.page-overlay
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background: #000
+  z-index: 10
+  opacity: .6
+  filter: alpha(opacity = 60)
+  display: none
+  cursor: pointer
+.pops
+  position: fixed
+  display: none
+  z-index: 20
+  max-width: 1200px
+  .m-close
+    position: absolute
+    top: -35px
+    right: 0px
+    cursor: pointer
+  form
+    margin-top: 30px
+    position: relative
+  label
+    position: relative
+    display: block
+    margin-bottom: 20px
+    &.half
+      width: 48%
+      display: inline-block
+      &:nth-child(even)
+        float: right
+    input
+      width: 100%
+      +f($mfn,.8em,400)
+      padding: 5px 10px
+      border-radius: 3px
+  textarea
+    border-radius: 3px
+    display: inline-block
+    width: 100%
+    padding: 15px 10px
+    +f($mfn,.8em,400)
+  .text
+    pointer-events: none
+    position: absolute
+    top: .5em
+    left: .5em
+    white-space: nowrap
+    text-transform: uppercase
+    +f($mfn,.8em,400,#bebebe)
+  input[type="submit"]
+    display: inline-block
+    float: right
+    position: relative
+    //top: 25px
+    background: none
+    border: none
+    text-transform: uppercase
+    +transition(.2s)
+    +f($mfn,.8em,400,#fff)
+    &:focus
+      outline: none
+  p
+    +f($mfn,.8em,300,#fff)
+  h2
+    +f($mfn,1.5em,400,#fff)
+    text-transform: uppercase
+
+.info-pop
+  background: rgba(0,0,0,.6)
+  text-align: center
+  width: 320px
+  padding: 10px 20px 20px 20px
+  .fa-close
+    font-size: 2em
+    color: #fff
+    +transition(.2s)
+    &:hover
+      color: violet
+
+.image-pop
+  transition: top 0.5s ease-in-out
+  -moz-transition: top 0.5s ease-in-out
+  -webkit-transition: top 0.5s ease-in-out
+  -ms-transition: top 0.5s ease-in-out
+  img
+    width: 100%
+  .image
+    position: relative
+    .image-prev
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+      width: 50%
+      bottom: 0
+      &:hover
+        cursor: url(../img/cursor_prev.png), auto
+    .image-next
+      display: block
+      position: absolute
+      top: 0
+      right: 0
+      width: 50%
+      bottom: 0
+      &:hover
+        cursor: url(../img/cursor_next.png), auto

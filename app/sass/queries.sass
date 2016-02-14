@@ -1,0 +1,118 @@
+@media only screen and (max-width: 1366px)
+  // SF-SECTION
+  .sf-section .fourth-sub
+    h1
+      font-size: 2em
+    h2
+      font-size: 1.5em
+    p
+      font-size: .8em
+  // INDEX: Exterior section
+  .pool-gallery
+    margin-top: 0
+    &.active
+      max-height: 440px
+  .event-gallery
+    &.active
+      max-height: 440px
+
+
+@media only screen and (max-width: 1024px)
+  // INDEX: Video section
+  .section-header-video
+    .index-about.active
+      margin-top: 0
+    .index-about p.quote
+      margin-top: 0
+    .about-btn
+      margin-top: 100px
+  // INDEX: Exterior section
+  .exterior-section
+    .ex-custom-electrics
+      width: 90%
+    .pool-gallery
+      margin-top: 0
+  .smart-section .close
+    width: 100px
+    height: 100px
+    top: 4em
+
+// landscape tablet
+@media screen and (min-width: 768px) and (orientation: landscape)
+  .index-about p
+    font-size: 1.2em
+
+// portrait phones
+@media screen and (max-width: 768px)
+  .index-sign
+    display: none !important
+  .exterior-section
+    .ex-custom-electrics
+      // margin-top: 50px
+      height: 55%
+      .left, .right
+        float: none
+        width: 100%
+      .left
+        height: 45%
+        overflow-y: scroll
+      .right
+        height: 55%
+      h3
+        font-size: .9em
+      p
+        font-size: .8em
+      .custom-e-title, .btn-cont
+        display: none
+      .wrap
+        position: relative
+      span.close-portfolio
+        font-size: 1em
+  // smart devices
+  .devices-content
+    .left, .right
+      float: none
+    .left
+      display: none
+    .right
+      width: 80%
+      margin: 100px auto
+      font-size: .8em
+    .btn-cont
+      display: none
+
+// landscape phones
+@media screen and (max-width: 768px) and (orientation: landscape)
+  .logo
+    width: 100%
+    margin: 2em auto 1em auto
+    text-align: left
+    img
+      width: 65px
+      margin-left: 100px
+  .section-header-video .about-btn
+    margin-top: 0
+  .index-about p
+    font-size: .8em
+  .exterior-section
+    .pool-gallery
+      margin-top: -110px
+      max-width: 70%
+      &.active
+        max-height: 250px
+    .ex-custom-electrics
+      margin-top: 5%
+      height: 85%
+      .left, .right
+        float: none
+        width: 100%
+        height: 100%
+      .left
+        display: none
+    // smart devices
+  .devices-content
+    .right
+      margin-top: 20px
+  .bedroom-switch
+    transform: scale(0.5)
+    -webkit-transform: scale(0.5)
