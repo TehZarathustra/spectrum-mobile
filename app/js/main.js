@@ -17,13 +17,13 @@
 				aEl.css('background-image', 'url('+fadeSrc+')');
 			},200);
 
-			$('.event-bg').bind('touchend click', function() {
+			$('.event-bg').bind('touchstart', function() {
 				el = $(this).parents('.m-service').data('el');
 
 				$('.'+el).toggleClass('clicked');
 			});
 
-			$('.switch-button-devices').bind('touchend', function() {
+			$('.switch-button-devices').bind('touchstart', function() {
 				el = $('.owl-item.active .switch-button-devices');
 
 				if ($('.owl-item.active .smart-bg').hasClass('active')) {
@@ -39,7 +39,7 @@
 			});
 		})();
 
-		$('.playBut').bind('touchend', function() {
+		$('.playBut').bind('touchstart', function() {
 			var url = 'https:'+$('#event-video').data('property').split(',')[0].split(':')[2].slice(0, -1);
 			window.open(url, '_blank').focus();
 		});
@@ -124,7 +124,7 @@
 				}
 			});
 
-			bg.bind('touchend', function() {
+			bg.bind('touchstart', function() {
 				if (bg.hasClass('active')) {
 					bg.removeClass('active');
 					$('.lutron-bg').removeClass('active');
@@ -159,7 +159,7 @@
 					jQuery('.pops').center();
 				}
 
-				$('.m-close, .page-overlay').bind('click touchend', function() {
+				$('.m-close, .page-overlay').bind('click touchstart', function() {
 					$('.page-overlay, .pops').fadeOut(500);
 				});
 
