@@ -101,7 +101,10 @@
 			},
 
 			afterLoad: function(anchorLink, index) {
-				
+				setTimeout(function() {
+					$('.active.m-service').addClass('clicked');
+				}, 200);
+				$('.m-service:not(.active)').removeClass('clicked');
 			},
 
 			afterRender: function () {
