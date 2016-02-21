@@ -12,7 +12,8 @@ open your terminal and type these:
 # Run it
 1. `cd your_directory`
 2. `npm install`
-3. `gulp`
+3. `bower isntall`
+4. `gulp`
 
 it will automatically start watching for `css` and `js`, to stop it press `ctrl + c`
 
