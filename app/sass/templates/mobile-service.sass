@@ -620,11 +620,22 @@
   .right
     width: 20%
     a
-      font-size: 3.2em
+      width: 52px
+      height: 52px
+      display: inline-block
       color: #fff
-      width: 100%
       text-decoration: none
       margin-top: 20px
+      background-size: 52px
+      &.phone-mobile
+        width: 48px
+        height: 48px
+        background-size: 48px
+
+.phone-mobile
+  background-image: url(../img/phone.png)
+.info-mobile
+  background-image: url(../img/info.png)
 
 .m-service.clicked
   .fade
