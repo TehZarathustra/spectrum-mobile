@@ -58,6 +58,17 @@
     left: 0
     right: 0
     bottom: 0
+    &:before
+      content: ''
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      z-index: 1
+      opacity: .5
+      +grd-v(transparent,#000)
     > div
       position: absolute
       top: 0
@@ -611,6 +622,7 @@
   position: absolute
   width: 100%
   padding: 1em
+  z-index: 2
   bottom: 20px
   .left
     width: 75%
@@ -620,17 +632,20 @@
   .right
     width: 20%
     a
-      width: 52px
-      height: 52px
+      width: 50px
+      height: 50px
       display: inline-block
       color: #fff
       text-decoration: none
       margin-top: 20px
-      background-size: 52px
+      background-size: 48px
+      background-repeat: no-repeat
       &.phone-mobile
-        width: 48px
-        height: 48px
-        background-size: 48px
+        width: 45px
+        position: relative
+        top: -3px
+        height: 45px
+        background-size: 45px
 
 .phone-mobile
   background-image: url(../img/phone.png)

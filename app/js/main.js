@@ -224,7 +224,7 @@
 
 				add_modal('.gallery-slider .item','image-pop',false,true);
 				add_modal('.add-gallery .item','image-pop',false,true);
-				add_modal('a.info','info-pop',false,false);
+				add_modal('a.info-mobile','info-pop',false,false);
 			});
 		})(jQuery);
 
