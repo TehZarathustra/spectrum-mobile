@@ -124,10 +124,9 @@
   position: absolute
 
 .bedroom-switch
-  transform: scale(0.5)
-  -webkit-transform: scale(0.5)
-  width: 200px
-  height: 317px
+  transform: none !important
+  width: 100px
+  height: 158px
   position: relative
   background: url(../img/b-switch.jpg)
   &.lutron-black
@@ -141,22 +140,23 @@
       height: 100%
   .switch-bar-wrap
     position: absolute
-    height: 158px
-    bottom: 94px
-    left: 96px
+    height: 78px
+    bottom: 46px
+    left: 48px
   .switch-bar
     position: absolute
-    width: 6px
+    width: 4px
     height: 0
     bottom: 0
     +transition(1s)
     background: white
     box-shadow: 0 0 50px 15px #fff
   &:after
-    content: 'GRAFIK T Dimmer & Switch'
+    content: 'GRAFIK T Dimmsser & Switch'
     position: absolute
-    bottom: -50px
-    +f($mfn,1.5em,300,#fff)
+    bottom: 10px
+    +f($mfn,.7em,300,#fff)
+    font-size: 1em
     width: 200%
     text-shadow: 0 0 10px rgba(0,0,0,1)
     text-align: center
@@ -166,7 +166,7 @@
     // content: 'LUTRON'
     position: absolute
     top: -50px
-    +f($mfn,1.5em,300,#fff)
+    +f($mfn,.7em,300,#fff)
     text-align: center
 
 .switch-colors
@@ -1724,16 +1724,12 @@ body.loaded
       text-align: center
       +f($mfn,1.2em,300,#fff)
   .bedroom-switch
-    transform: scale(0.4)
-    -webkit-transform: scale(0.4)
-    -moz-transform: scale(0.4)
     margin: 0 auto
     top: -50px
     pointer-events: none
     &:after
       content: 'Lutron Grafik T'
-      font-size: 2.6em
-      bottom: -70px
+      bottom: -30px
   &.clicked
     .switch-bar
       height: 100%
@@ -2035,8 +2031,6 @@ body.loaded
     position: absolute
     bottom: 70px
     right: 70px
-    transform: scale(0.7)
-    -webkit-transform: scale(0.7)
 
   .mouse-button-devices
     top: 25%
