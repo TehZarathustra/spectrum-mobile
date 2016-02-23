@@ -98,6 +98,11 @@
 			touchSensitivity: 20,
 
 			onLeave: function (index, nextIndex, direction) {
+				if (nextIndex == 4) {
+					$('.scroll-down').hide();
+				} else {
+					$('.scroll-down').show();
+				}
 			},
 
 			afterLoad: function(anchorLink, index) {
