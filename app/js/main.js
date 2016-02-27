@@ -44,6 +44,62 @@
 			window.open(url, '_blank').focus();
 		});
 
+
+		function throttle(func, ms) {
+
+		  var isThrottled = false,
+		    savedArgs,
+		    savedThis;
+
+		  function wrapper() {
+
+		    if (isThrottled) { // (2)
+		      savedArgs = arguments;
+		      savedThis = this;
+		      return;
+		    }
+
+		    func.apply(this, arguments); // (1)
+
+		    isThrottled = true;
+
+		    setTimeout(function() {
+		      isThrottled = false; // (3)
+		      if (savedArgs) {
+		        wrapper.apply(savedThis, savedArgs);
+		        savedArgs = savedThis = null;
+		      }
+		    }, ms);
+		  }
+
+		  return wrapper;
+		}
+
+		if (window.DeviceOrientationEvent) {
+		  window.addEventListener("deviceorientation", throttle(orientation, 700), false);
+		  console.log("DeviceOrientationEvent is supported");
+		} else {
+		  console.log("DeviceOrientationEvent is not supported");
+		}
+
+		function orientation(event) {
+			var el = $('.section.active .event-bg .fade');
+			  if (event.gamma > -50 && event.gamma < 50) {
+				  el.css({
+				  	'background-position': (event.gamma + 50) + '%'
+				  })
+				} else if (event.gamma < -50) {
+					el.css({
+				  	'background-position': '0%'
+				  })
+				}
+				 else if (event.gamma > 50) {
+				 	el.css({
+				  	'background-position': '100%'
+				  })
+				 }
+		}
+
 		// about text
 		(function() {
 			var btn = $('.about-btn'),
