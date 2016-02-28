@@ -83,20 +83,54 @@
 		}
 
 		function orientation(event) {
-			var el = $('.section.active .event-bg .fade');
+			var el = $('.section.active .event-bg > div'),
+				fade = $('.section.active .event-bg .fade'),
+				bar = $('.switch-bar'),
+				multiplier = (Math.abs(Math.ceil(event.gamma/5 * 1.4)));
 			  if (event.gamma > -50 && event.gamma < 50) {
 				  el.css({
 				  	'background-position': (event.gamma + 50) + '%'
-				  })
+				  });
+				  if (multiplier > 5) {
+				  fade.css({
+				  	'opacity':  multiplier > 9 ? multiplier : '.' + multiplier
+				  });
+				} else {
+					fade.css({
+				  	'opacity': 0
+				  });
+				}
+				  console.log(multiplier);
+				  if ($('.m-lutron').hasClass('active')) {
+				  	bar.css({
+				  		'height': (Math.abs(Math.ceil(event.gamma/5)) * 10) + '%'
+				  	})
+				  }
 				} else if (event.gamma < -50) {
 					el.css({
-				  	'background-position': '0%'
-				  })
+				  		'background-position': '0%'
+				  	})
+				  	fade.css({
+				  		'opacity': '1'
+				  	})
+				  	if ($('.m-lutron').hasClass('active')) {
+				  	bar.css({
+				  		'height': '100%'
+				  	})
+				  }
 				}
 				 else if (event.gamma > 50) {
 				 	el.css({
 				  	'background-position': '100%'
 				  })
+				 	fade.css({
+				  		'opacity': '1'
+				  	})
+				  	if ($('.m-lutron').hasClass('active')) {
+				  	bar.css({
+				  		'height': '100%'
+				  	})
+				  }
 				 }
 		}
 
