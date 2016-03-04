@@ -235,6 +235,7 @@
 			// in
 			$('input, textarea').focus(function() {
 				$(this).parent().find('.text').hide();
+				$('.info-form p').hide();
 			});
 
 			// out
@@ -243,6 +244,7 @@
 				if (el.val().length < 1) {
 					el.parent().find('.text').show();
 				}
+				$('.info-form p').show();
 			});
 		})();
 		(function() {
