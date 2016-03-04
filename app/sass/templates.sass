@@ -2873,6 +2873,88 @@ span.close-portfolio
 
 
 
+.slide-out-form
+  position: fixed
+  top: 0
+  bottom: 0
+  left: 0
+  width: 85%
+  box-sizing: border-box
+  padding: 1em
+  background: rgba(0,0,0,.9)
+  z-index: 2
+  transform: translateX(-100%)
+  -webkit-transform: translateX(-100%)
+  -moz-transform: translateX(-100%)
+  -o-transform: translateX(-100%)
+  +transition(.5s)
+  &.active
+    transform: translateX(0)
+    -webkit-transform: translateX(0)
+    -moz-transform: translateX(0)
+    -o-transform: translateX(0)
+
+.info-form
+  .m-close
+    position: absolute
+    top: -35px
+    right: 0px
+    cursor: pointer
+  form
+    margin-top: 30px
+    position: relative
+  label
+    position: relative
+    display: block
+    margin-bottom: 20px
+    &.half
+      width: 48%
+      display: inline-block
+      &:nth-child(even)
+        float: right
+    input
+      width: 100%
+      +f($mfn,.8em,400)
+      padding: 5px 10px
+      border-radius: 3px
+  textarea
+    border-radius: 3px
+    display: inline-block
+    width: 100%
+    padding: 15px 10px
+    +f($mfn,.8em,400)
+  .text
+    pointer-events: none
+    position: absolute
+    top: .5em
+    left: .5em
+    white-space: nowrap
+    text-transform: uppercase
+    +f($mfn,.8em,400,#bebebe)
+  input[type="submit"]
+    display: inline-block
+    float: right
+    position: relative
+    //top: 25px
+    background: none
+    border: none
+    text-transform: uppercase
+    +transition(.2s)
+    +f($mfn,.8em,400,#fff)
+    &:focus
+      outline: none
+  p
+    +f($mfn,.8em,300,#fff)
+  h2
+    +f($mfn,1.5em,400,#fff)
+    text-transform: uppercase
+  .fa-close
+    font-size: 2em
+    color: #fff
+    +transition(.2s)
+    &:hover
+      color: violet
+
 .smart-section
   z-index: 1
   position: relative
