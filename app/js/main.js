@@ -83,6 +83,7 @@
 		}
 
 		function orientation(event) {
+			if (!$('.slide-out-form').hasClass('active')) {
 			var el = $('.section.active .event-bg > div'),
 				fade = $('.section.active .event-bg .fade'),
 				bar = $('.switch-bar'),
@@ -132,6 +133,7 @@
 				  	})
 				  }
 				 }
+			}
 		}
 
 		// about text
